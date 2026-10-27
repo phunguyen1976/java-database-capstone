@@ -60,6 +60,12 @@ public class Doctor {
 
 // 8. Getters and Setters:
 //    - Standard getter and setter methods are provided for all fields: id, name, specialty, email, password, phone, and availableTimes.
-
+@NotNull
+@Size(min = 3, max = 100)
+@Email
+@Pattern(regexp = "\\d{10}", message = "Phone number must be 10 digits")
+@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+@ElementCollection
+private List<String> availableTimes;
 }
 
