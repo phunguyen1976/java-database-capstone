@@ -67,6 +67,8 @@ public class Appointment {
 
 // 10. Getters and Setters:
 //    - Standard getter and setter methods are provided for accessing and modifying the fields: id, doctor, patient, appointmentTime, status, etc.
-
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Future(message = "Appointment time must be in the future")
 }
 
