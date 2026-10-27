@@ -38,6 +38,7 @@ public class TokenService {
 // - If the role or user does not exist, it returns false, indicating the token is invalid.
 // - The method gracefully handles any errors by returning false if the token is invalid or an exception occurs.
 // This ensures secure access control based on the user's role and their existence in the system.
-
-
+private final AdminRepository adminRepository;
+private final DoctorRepository doctorRepository;
+private final PatientRepository patientRepository;
 }
