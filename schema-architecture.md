@@ -1,4 +1,23 @@
-1. User accesses AdminDashboard or Appointment pages.
-2. The action is routed to the appropriate Thymeleaf or REST controller.
-3. The controller calls the service layer...
-...
+## MySQL Database Design
+### Table: appointments
+- id: INT, Primary Key, Auto Increment
+- doctor_id: INT, Foreign Key → doctors(id)
+- patient_id: INT, Foreign Key → patients(id)
+- appointment_time: DATETIME, Not Null
+- status: INT (0 = Scheduled, 1 = Completed, 2 = Cancelled)
+## MongoDB Collection Design
+### Collection: prescriptions
+```json
+{
+  "_id": "ObjectId('64abc123456')",
+  "patientName": "John Smith",
+  "appointmentId": 51,
+  "medication": "Paracetamol",
+  "dosage": "500mg",
+  "doctorNotes": "Take 1 tablet every 6 hours.",
+  "refillCount": 2,
+  "pharmacy": {
+    "name": "Walgreens SF",
+    "location": "Market Street"
+  }
+}
